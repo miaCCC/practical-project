@@ -37,16 +37,13 @@
             </router-link>
           </li>
           <li class="nav-list__setting">
-            <router-link to="" class>
+            <router-link to="" class="nav-list__setting__content">
             <i class="fas fa-cog"></i>
               <span>管理設定</span>
             </router-link>
             <div class="nav-list__menu">
               <ul>
-                <router-link>
-                  <li>問題類型管理</li>
-                </router-link>
-                
+                <li>問題類型管理</li>
                 <li>專案問題管理</li>
                 <li>專案類別管理</li>
                 <li>專案管理</li>
@@ -57,8 +54,8 @@
               </ul>
             </div>
           </li>
-          <li class="nav-list__menu nav-list__forms">
-            <router-link to="" class>
+          <li class="nav-list__forms">
+            <router-link to="" class="nav-list__forms__content">
             <i class="far fa-chart-bar"></i>
             <span>報表</span>
             </router-link>
