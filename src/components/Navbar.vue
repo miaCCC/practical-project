@@ -1,9 +1,9 @@
 <template>
-  <nav>
-    <div class="nav-container">
-      <div class="nav-title">
+  <nav class="d-flex flex-column">
+    <div class="nav-container scrollbar">
+      <div class="nav-title d-flex justify-content-center align-items-center">
         <i class="fas fa-headset"></i>
-        <h2>資訊支援服務台</h2>
+        <span>資訊支援服務台</span>
         <i class="fas fa-times"></i>
       </div>
 
@@ -12,7 +12,7 @@
         <div class="nav-user__user-info">
           <span class="name">張雅棠</span>
           <span class="number">1989</span>
-          <span class="admin">Admin</span>
+          <span class="number">Admin</span>
         </div>
       </div>
 
@@ -37,11 +37,16 @@
             </router-link>
           </li>
           <li class="nav-list__setting">
+            <router-link to="" class>
             <i class="fas fa-cog"></i>
               <span>管理設定</span>
+            </router-link>
             <div class="nav-list__menu">
               <ul>
-                <li>問題類型管理</li>
+                <router-link>
+                  <li>問題類型管理</li>
+                </router-link>
+                
                 <li>專案問題管理</li>
                 <li>專案類別管理</li>
                 <li>專案管理</li>
@@ -53,8 +58,10 @@
             </div>
           </li>
           <li class="nav-list__menu nav-list__forms">
+            <router-link to="" class>
             <i class="far fa-chart-bar"></i>
             <span>報表</span>
+            </router-link>
             <div class="nav-list__menu">
               <ul>
                 <li>歷史案件查詢</li>
@@ -63,7 +70,14 @@
           </li>
         </ul>
       </div>
+     
+     
     </div>
-    <div class="cursor-pointer" @click="logout">登出</div>
+    <div class="nav-footer d-flex justify-content-center align-items-center">
+        <div class="cursor-pointer nav-footer__log-out" @click="logout"> 
+          登出
+        <i class="fas fa-sign-out-alt"></i>
+        </div>
+      </div>
   </nav>
 </template>
