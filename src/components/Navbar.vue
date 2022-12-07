@@ -37,10 +37,12 @@
             </router-link>
           </li>
           <li class="nav-list__setting">
+            
             <router-link to="" class="nav-list__setting__content">
             <i class="fas fa-cog"></i>
               <span>管理設定</span>
             </router-link>
+            <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
             <div class="nav-list__menu">
               <ul>
                 <li>問題類型管理</li>
@@ -59,6 +61,7 @@
             <i class="far fa-chart-bar"></i>
             <span>報表</span>
             </router-link>
+            <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
             <div class="nav-list__menu">
               <ul>
                 <li>歷史案件查詢</li>
