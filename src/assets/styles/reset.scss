@@ -82,10 +82,14 @@ li {
 a {
   text-decoration: none;
   color: #f5f5f5;
+  display: block;
+  height: 100%;
+  transition: 300ms;
 }
 a:hover {
   text-decoration: none;
-  color: lightgray;
+  color: rgb(146, 145, 145);
+  transition: 0.3s ease-out;
 }
 
 button,
@@ -162,11 +166,13 @@ select {
 }
 
 %active {
-  opacity: 0.5;
+  opacity: 1;
 
   &:hover,
   &.active {
-    opacity: 1;
+    color: lightgray;
+    opacity: 0.95;
+    transition: 0.3s  ease-out ;
   }
 
 }

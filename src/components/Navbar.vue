@@ -43,16 +43,16 @@
             <i class="fas fa-cog"></i>
               <span>管理設定</span>
             </router-link>
-            <div class="nav-list__menu collapse" id="collapseSetting">
+            <div class="nav-list__menu collapse active" id="collapseSetting">
               <ul>
-                <li>問題類型管理</li>
-                <li>專案問題管理</li>
-                <li>專案類別管理</li>
-                <li>專案管理</li>
-                <li>地點管理</li>
-                <li>系統負責人管理</li>
-                <li>專員管理</li>
-                <li>人員管理</li>
+                <li class="cursor-pointer">問題類型管理</li>
+                <li class="cursor-pointer">專案問題管理</li>
+                <li class="cursor-pointer">專案類別管理</li>
+                <li class="cursor-pointer">專案管理</li>
+                <li class="cursor-pointer">地點管理</li>
+                <li class="cursor-pointer">系統負責人管理</li>
+                <li class="cursor-pointer">專員管理</li>
+                <li class="cursor-pointer">人員管理</li>
               </ul>
             </div>
           </li>
