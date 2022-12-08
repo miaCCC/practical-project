@@ -6,8 +6,14 @@ import List from '../views/List.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  
   {
     path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -20,6 +26,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  linkExactActiveClass: 'active',
   routes
 })
 
