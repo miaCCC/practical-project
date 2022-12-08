@@ -61,9 +61,7 @@ nav {
   &__forms__content::after {
     @extend %pseudo-element
    }
-  &__menu {
-    display: none;
-  }
+
   &__menu li {
     font-size: 13px;
   }
@@ -76,11 +74,7 @@ nav {
     font-size: 8px;
   }
 }
-.navbar-toggle:checked~.nav-list__menu {
-  display: block;
-  /*測試用，之後刪除*/
-}
-  
+
 
 .nav-footer {
   flex-grow: 1;

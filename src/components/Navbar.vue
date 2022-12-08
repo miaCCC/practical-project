@@ -35,15 +35,15 @@
               <i class="fas fa-bug"></i>
                 <span>案件列表</span> 
             </router-link>
+            
           </li>
           <li class="nav-list__setting">
             
-            <router-link to="" class="nav-list__setting__content">
+            <router-link to="" class="nav-list__setting__content" data-toggle="collapse" href="#collapseSetting"  aria-expanded="false" aria-controls="collapseSetting" >
             <i class="fas fa-cog"></i>
               <span>管理設定</span>
             </router-link>
-            <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
-            <div class="nav-list__menu">
+            <div class="nav-list__menu collapse" id="collapseSetting">
               <ul>
                 <li>問題類型管理</li>
                 <li>專案問題管理</li>
@@ -57,12 +57,11 @@
             </div>
           </li>
           <li class="nav-list__forms">
-            <router-link to="" class="nav-list__forms__content">
+            <router-link to="" class="nav-list__forms__content" data-toggle="collapse" href="#collapseForms"  aria-expanded="false" aria-controls="collapseForms">
             <i class="far fa-chart-bar"></i>
             <span>報表</span>
             </router-link>
-            <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
-            <div class="nav-list__menu">
+            <div class="nav-list__menu collapse" id="collapseForms">
               <ul>
                 <li>歷史案件查詢</li>
               </ul>
@@ -70,8 +69,7 @@
           </li>
         </ul>
       </div>
-     
-     
+
     </div>
     <div class="nav-footer d-flex justify-content-center align-items-center">
         <div class="cursor-pointer nav-footer__log-out" @click="logout"> 
