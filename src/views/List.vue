@@ -7,9 +7,10 @@
       </div>
       <div class="list-container__content py-4 px-5">
         <!-- 使用 NavTabs 元件 -->
-      <NavTabs />
+       <NavTabs />
       </div>
-      
+        <!-- 使用 NoDone 元件 -->
+       <NoDone />
     </div>
   </div>
 </template>
@@ -17,10 +18,12 @@
 <script>
 import Navbar from "../components/Navbar";
 import NavTabs from "./../components/NavTabs";
+import NoDone from "./../components/NoDone";
 export default {
   components: {
     Navbar,
-    NavTabs
+    NavTabs,
+    NoDone
   }
 };
 </script>
