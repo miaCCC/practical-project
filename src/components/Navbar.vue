@@ -72,7 +72,7 @@
 
     </div>
     <div class="nav-footer d-flex justify-content-center align-items-center">
-        <div class="cursor-pointer nav-footer__log-out" @click="logout"> 
+        <div class="cursor-pointer nav-footer__log-out"> 
           登出
         <i class="fas fa-sign-out-alt"></i>
         </div>

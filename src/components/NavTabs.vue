@@ -1,12 +1,12 @@
 <template>
   <div>
-    <router-link class="btn btn-outline-primary btn-sm">Asana</router-link>
+    <button class="btn btn-outline-primary btn-sm">Asana</button>
     <ul class="nav nav-tabs mb-4">
       <li class="nav-item">
-        <router-link to="" class="nav-link">未完工</router-link>
+        <router-link to="/list" class="nav-link">未完工</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="" class="nav-link">案件查詢</router-link>
+        <router-link to="/list/search" class="nav-link">案件查詢</router-link>
       </li>
     </ul>
   </div>
@@ -21,5 +21,6 @@
   font-size: 0.688rem;
   line-height: 1.5;
 }
+
 
 </style>

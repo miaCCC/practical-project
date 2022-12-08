@@ -2,11 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import List from '../views/List.vue'
+import ListSearch from '../views/ListSearch.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  
   {
     path: '/',
     name: 'home',
@@ -21,6 +21,11 @@ const routes = [
     path: '/list',
     name: 'list',
     component: List
+  },
+  {
+    path: '/list/search',
+    name: 'search',
+    component: ListSearch
   },
 
 ]

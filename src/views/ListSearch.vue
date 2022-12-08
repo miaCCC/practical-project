@@ -29,5 +29,4 @@ export default {
 .list-container {
   flex-grow: 1;
 }
-
 </style>
