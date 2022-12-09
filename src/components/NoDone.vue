@@ -1,32 +1,27 @@
 <template>
   <div class="tab-container">
-    <div class="tab-container__top">
-      <div class="container__top__search">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="請輸入" />
-          <span class="input-group-btn">
-            <button class="btn btn-outline-primary btn-search">搜尋</button>
-          </span>
-        </div>
+    <div class="tab-container__top my-5">
+      <div class="tab-container__top__search d-flex align-items-center justify-content-end">
+        <input type="text" class="form-control" id="search-input" placeholder="請輸入" />
+        <button type="submit" class="btn btn-outline-primary" id="search-submit-button">搜尋</button>
       </div>
     </div>
     <table class="table table-bordered">
       <thead>
         <tr>
-      <th scope="col">案件編號</th>
-      <th scope="col">申請人</th>
-      <th scope="col">院區</th>
-      <th scope="col">問題類型</th>
-      <th scope="col">回報系統</th>
-      <th scope="col">檔案</th>
-      <th scope="col">建立時間</th>
-      <th scope="col">問題描述</th>
-      <th scope="col">接單人</th>
-      <th scope="col">委託人</th>
-      <th scope="col">狀態</th>
-      <th scope="col">案件進度</th>
-
-    </tr>
+          <th scope="col">案件編號</th>
+          <th scope="col">申請人</th>
+          <th scope="col">院區</th>
+          <th scope="col">問題類型</th>
+          <th scope="col">回報系統</th>
+          <th scope="col">檔案</th>
+          <th scope="col">建立時間</th>
+          <th scope="col">問題描述</th>
+          <th scope="col">接單人</th>
+          <th scope="col">委託人</th>
+          <th scope="col">狀態</th>
+          <th scope="col">案件進度</th>
+        </tr>
       </thead>
       <tbody>
         <tr v-for="userList in userLists" :key="userList.id">
@@ -41,6 +36,12 @@
           <td>{{userList.entrust}}</td>
           <td>{{userList.state}}</td>
           <td>{{userList.schedule}}</td>
+          <td>
+            <input type="button" value="進度" class="btn btn-outline-info btn-sm" data-orderno="2021050300004" data-toggle="modal" data-target="#progressmodal">
+            <input type="button" value="完工" class="btn btn-outline-primary btn-sm">
+            <input type="button" value="編輯" class="btn btn-outline-info btn-sm" data-orderno="2021050300004" data-toggle="modal" data-target="#editmodal">
+            <input type="button" value="取消" class="btn btn-outline-secondary btn-sm">
+          </td>
         </tr>
       </tbody>
     </table>
@@ -78,4 +79,14 @@ export default {
 
 
 <style lang="scss" scoped>
+
+.form-control {
+  display: inline-block;
+  width: 30%;
+}
+#search-submit-button {
+  margin: 6px;
+  padding: 5.5px;
+}
+
 </style>
