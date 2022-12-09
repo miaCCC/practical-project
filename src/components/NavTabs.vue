@@ -21,6 +21,9 @@
   font-size: 0.688rem;
   line-height: 1.5;
 }
+.nav-link {
+  color: rgb(72, 166, 249);
+}
 
 
 </style>

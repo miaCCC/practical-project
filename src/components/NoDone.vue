@@ -2,8 +2,14 @@
   <div class="tab-container">
     <div class="tab-container__top my-5">
       <div class="tab-container__top__search d-flex align-items-center justify-content-end">
-        <input type="text" class="form-control" id="search-input" placeholder="請輸入" />
-        <button type="submit" class="btn btn-outline-primary" id="search-submit-button">搜尋</button>
+        <input 
+         v-model.trim="keyWord"
+         type="text"
+         class="form-control" id="search-input" placeholder="請輸入案件編號" />
+        <button 
+          @click="filterLists"
+          type="submit" 
+          class="btn btn-outline-primary" id="search-submit-button">搜尋</button>
       </div>
     </div>
     <table class="table table-bordered">
@@ -24,7 +30,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="userList in userLists" :key="userList.id">
+        <tr v-for=" userList  in (searchList.length ? searchList : userLists)" :key="userList.id">
           <th scope="row">{{userList.id}}</th>
           <td>{{userList.name}}</td>
           <td>{{userList.type}}</td>
@@ -45,6 +51,7 @@
         </tr>
       </tbody>
     </table>
+    
   </div>
 </template>
 
@@ -53,7 +60,7 @@ const dummyData = {
   userLists: [
     {
       id: 202105030004,
-      name: "王曉明",
+      name: "王一",
       area: "BO",
       type: "需求開發",
       system: "Portering",
@@ -61,7 +68,35 @@ const dummyData = {
       time: "2021-05-03 16:13",
       description: "iOS系統無法顯示出案件稽核",
       order: "王大明",
-      entrust: "王曉明",
+      entrust: "王一",
+      state: "已指派",
+      schedule: ""
+    },
+    {
+      id: 202105030005,
+      name: "王二",
+      area: "BO",
+      type: "需求開發",
+      system: "Portering",
+      file: "無檔案",
+      time: "2021-05-03 16:13",
+      description: "iOS系統無法顯示出案件稽核",
+      order: "王大明",
+      entrust: "王二",
+      state: "已指派",
+      schedule: ""
+    },
+    {
+      id: 202105030006,
+      name: "王三",
+      area: "BO",
+      type: "需求開發",
+      system: "Portering",
+      file: "無檔案",
+      time: "2021-05-03 16:13",
+      description: "iOS系統無法顯示出案件稽核",
+      order: "王大明",
+      entrust: "王三",
       state: "已指派",
       schedule: ""
     }
@@ -71,15 +106,27 @@ const dummyData = {
 export default {
   data() {
     return {
-      userLists: dummyData.userLists
+      userLists: dummyData.userLists,
+      keyWord: '',
+      searchList: []
     };
+  },
+  methods: {
+    //搜尋案件編號
+  filterLists() {
+    console.log(this.userLists)
+    this.searchList = this.userLists.filter(searchResult => searchResult.id.toString().match(this.keyWord));
   }
+}
+  
 };
 </script>
 
 
 <style lang="scss" scoped>
-
+th {
+  min-width: 64px;
+}
 .form-control {
   display: inline-block;
   width: 30%;
