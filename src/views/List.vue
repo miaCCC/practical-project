@@ -8,9 +8,10 @@
       <div class="list-container__content py-4 px-5">
         <!-- 使用 NavTabs 元件 -->
        <NavTabs />
-      </div>
-        <!-- 使用 NoDone 元件 -->
+       <!-- 使用 NoDone 元件 -->
        <NoDone />
+      </div>
+        
     </div>
   </div>
 </template>
@@ -28,7 +29,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .list-container {
   flex-grow: 1;
 }

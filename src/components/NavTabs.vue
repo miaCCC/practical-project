@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .btn-sm {
   border-radius: 0.844em;
