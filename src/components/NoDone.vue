@@ -2,14 +2,19 @@
   <div class="tab-container">
     <div class="tab-container__top my-5">
       <div class="tab-container__top__search d-flex align-items-center justify-content-end">
-        <input 
-         v-model.trim="keyWord"
-         type="text"
-         class="form-control" id="search-input" placeholder="請輸入案件編號" />
-        <button 
+        <input
+          v-model.trim="keyWord"
+          type="text"
+          class="form-control"
+          id="search-input"
+          placeholder="請輸入案件編號"
+        />
+        <button
           @click="filterLists"
-          type="submit" 
-          class="btn btn-outline-primary" id="search-submit-button">搜尋</button>
+          type="submit"
+          class="btn btn-outline-primary"
+          id="search-submit-button"
+        >搜尋</button>
       </div>
     </div>
     <table class="table table-bordered">
@@ -43,15 +48,58 @@
           <td>{{userList.state}}</td>
           <td>{{userList.schedule}}</td>
           <td>
-            <input type="button" value="進度" class="btn btn-outline-info btn-sm" data-orderno="2021050300004" data-toggle="modal" data-target="#progressmodal">
-            <input type="button" value="完工" class="btn btn-outline-primary btn-sm">
-            <input type="button" value="編輯" class="btn btn-outline-info btn-sm" data-orderno="2021050300004" data-toggle="modal" data-target="#editmodal">
-            <input type="button" value="取消" class="btn btn-outline-secondary btn-sm">
+            <input
+              type="button"
+              value="進度"
+              class="btn btn-outline-info btn-sm"
+              data-orderno="2021050300004"
+              data-toggle="modal"
+              data-target="#progressmodal"
+            />
+            <input type="button" value="完工" class="btn btn-outline-primary btn-sm" />
+            <input
+              type="button"
+              value="編輯"
+              class="btn btn-outline-info btn-sm"
+              data-orderno="2021050300004"
+              data-toggle="modal"
+              data-target="#editmodal"
+            />
+            <input type="button" value="取消" class="btn btn-outline-secondary btn-sm" />
           </td>
+          <!-- 進度Modal -->
+          <div
+            class="modal fade"
+            id="progressmodal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">案件編號:{{userList.id}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">案件進度編輯:</label>
+                    <textarea id="ProgressTextarea" style="height:100%; width:100%"></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary">確認變更</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </tr>
       </tbody>
     </table>
-    
   </div>
 </template>
 
@@ -107,18 +155,19 @@ export default {
   data() {
     return {
       userLists: dummyData.userLists,
-      keyWord: '',
+      keyWord: "",
       searchList: []
     };
   },
   methods: {
     //搜尋案件編號
-  filterLists() {
-    console.log(this.userLists)
-    this.searchList = this.userLists.filter(searchResult => searchResult.id.toString().match(this.keyWord));
+    filterLists() {
+      console.log(this.userLists);
+      this.searchList = this.userLists.filter(searchResult =>
+        searchResult.id.toString().match(this.keyWord)
+      );
+    }
   }
-}
-  
 };
 </script>
 
@@ -135,5 +184,4 @@ th {
   margin: 6px;
   padding: 5.5px;
 }
-
 </style>
